@@ -1,0 +1,33 @@
+<div class="row">
+<div class="container">
+  <div class="col-lg-8">
+  <div class="todo-list">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div class="input-group">
+    <input type="text" placeholder="todo" class="form-control" #newTask >
+    <button (click)="add(newTask.value)" class="add-button">+</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">First</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks" class="table">
+        <td>{{task}}</td>
+        <td>
+          <button (click)="remove(task)" class="remove-button">x</button>
+          <button class="done-button">Done</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</div>
+</div>
+</div>
